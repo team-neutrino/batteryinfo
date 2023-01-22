@@ -1,21 +1,51 @@
-import csv
+import csv, numpy
+import matplotlib.pyplot as plt
 
 
 def get_data(fname):
+    '''read data from csv file.
+    '''
     with open(f"data/{fname}", newline='') as f:
         reader = csv.reader(f)
         data = []
         for row in reader:
             if "12A" in row[0]:
                 data.append(list(map(float, row[1:5])))
-    return data
+    return numpy.array(data).T
+
+
+def plot():
+    # list of file names.
+    fnames = [
+            "Applejack-12A-1-21-2023_Applejack-12A-1-21-2023.csv",
+            "Feta-12A-1-21-2023_Feta-12A-1-21-2023.csv",
+            "Swiss-12A-1-21-2023_Swiss-12A-1-21-2023.csv",
+            ]
+    # get data from the list of files.
+    data = [get_data(s) for s in fnames]
+
+    print(data[0][0, :])
+    print(data[0][1, :])
+    # a 3x1 plot
+    fig, axs = plt.subplots(3, 1,
+            tight_layout=True,
+            sharex=True,
+            figsize=(4, 7),
+            )
+    labels = [s.split("-")[0] for s in fnames]
+    for j in range(3):
+        for i, fname in enumerate(fnames):
+            axs[j].plot(data[i][0,:], data[i][j+1,:], label=labels[i])
+
+    axs[0].set_ylabel("Voltage (V)")
+    axs[1].set_ylabel("Current (A)")
+    axs[2].set_ylabel("Temp (F)")
+    axs[2].set_xlabel("Time (s)")
+    axs[0].legend()
+    plt.show()
+    fig.savefig(f'batteryVI.pdf')
 
 
 
 if __name__ == "__main__":
-
-    fnames = ["Applejack-12A-1-21-2023_Applejack-12A-1-21-2023.csv",
-            "Feta-12A-1-21-2023_Feta-12A-1-21-2023.csv",
-            "Swiss-12A-1-21-2023_Swiss-12A-1-21-2023.csv",
-            ]
-    get_data(fnames[0])
+    plot()
