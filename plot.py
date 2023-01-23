@@ -27,20 +27,19 @@ def plot():
     print(data[0][0, :])
     print(data[0][1, :])
     # a 3x1 plot
-    fig, axs = plt.subplots(3, 1,
+    fig, axs = plt.subplots(2, 1,
             tight_layout=True,
             sharex=True,
-            figsize=(4, 7),
+            figsize=(4, 5.5),
             )
     labels = [s.split("-")[0] for s in fnames]
-    for j in range(3):
+    for j in range(2):
         for i, fname in enumerate(fnames):
             axs[j].plot(data[i][0,:], data[i][j+1,:], label=labels[i])
 
     axs[0].set_ylabel("Voltage (V)")
     axs[1].set_ylabel("Current (A)")
-    axs[2].set_ylabel("Temp (F)")
-    axs[2].set_xlabel("Time (s)")
+    axs[1].set_xlabel("Time (s)")
     axs[0].legend()
     plt.show()
     fig.savefig(f'batteryVI.pdf')
