@@ -23,6 +23,8 @@ def plot():
             "Battery1-12A_1_23_2023_Battery1-12A_1_23_2023.csv",
             "Camembert-12A-1-21-2023_Camembert-12A-1-21-2023.csv",
             "Battery2-12A-1-21-2023_Battery2-12A-1-21-2023.csv",
+            "RainbowDash-12A-1-24-2023_RainbowDash-12A-1-24-2023.csv",
+            "Swiss-12A-1-24-2023_Swiss-12A-1-24-2023.csv",
             ]
     # get data from the list of files.
     data = [get_data(s) for s in fnames]
