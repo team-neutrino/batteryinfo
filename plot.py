@@ -30,6 +30,7 @@ def plot():
             "BatteryD-12A-1-25-2023_BatteryD-12A-1-25-2023.csv",
             "CDia-12A-1-25-2023_CDia-12A-1-25-2023.csv",
             "BatteryC-12A-1-28-2023_BatteryC-12A-1-28-2023.csv",
+            "CDia-12A-1-28-2023_CDia-12A-1-28-2023.csv",
             ]
     # get data from the list of files.
     data = [get_data(s) for s in fnames]
@@ -47,6 +48,7 @@ def plot():
         for i, fname in enumerate(fnames):
             axs[j].plot(data[i][0,:], data[i][j+1,:], label=labels[i])
 
+    axs[0].grid()
     axs[0].set_ylabel("Voltage (V)")
     axs[1].set_ylabel("Current (A)")
     axs[1].set_xlabel("Time (s)")
