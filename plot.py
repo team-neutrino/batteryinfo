@@ -42,7 +42,7 @@ def plot():
             "BatteryC-12A-2-4-2023_BatteryC-12A-2-4-2023.csv",
             "BatteryD-12A-2-4-2023_BatteryD-12A-2-4-2023.csv",
             "Battery1-12A-2-4-2023_Battery1-12A-2-4-2023.csv",
-            "Applejack-12A-2-4-2023_Applejack-12A-2-4-2023.csv",
+            # "Applejack-12A-2-4-2023_Applejack-12A-2-4-2023.csv",
             "BatteryD-12A-2-6-2023_BatteryD-12A-2-6-2023.csv",
             "Battery1-12A-2-6-2023_Battery1-12A-2-6-2023.csv",
             "Battery1-12A-2-7-2023_Battery1-12A-2-7-2023.csv",
