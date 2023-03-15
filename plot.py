@@ -29,7 +29,7 @@ def plot():
             tight_layout=True,
             sharex=True,
             figsize=(4, 5.5),
-            height_ratios=[2, 1]
+            height_ratios=[4, 1]
             )
     labels = [s.split("-")[0] for s in fnames]
     for j in range(2):
@@ -40,9 +40,9 @@ def plot():
     axs[0].set_ylabel("Voltage (V)")
     axs[1].set_ylabel("Current (A)")
     axs[1].set_xlabel("Time (s)")
-    # axs[0].legend()
+    axs[0].legend(fontsize=6)
     plt.show()
-    fig.savefig(f'batteryVI.pdf')
+    fig.savefig('batteryVI.pdf')
 
 
 if __name__ == "__main__":
