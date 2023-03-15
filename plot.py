@@ -1,6 +1,6 @@
 import csv, numpy
 import matplotlib.pyplot as plt
-
+import os
 
 def get_data(fname):
     '''read data from csv file.
@@ -15,41 +15,10 @@ def get_data(fname):
 
 
 def plot():
-    # list of file names.
-    fnames = [
-            "Applejack-12A-1-21-2023_Applejack-12A-1-21-2023.csv",
-            "Feta-12A-1-21-2023_Feta-12A-1-21-2023.csv",
-            "Swiss-12A-1-21-2023_Swiss-12A-1-21-2023.csv",
-            "Battery1-12A_1_23_2023_Battery1-12A_1_23_2023.csv",
-            "Camembert-12A-1-21-2023_Camembert-12A-1-21-2023.csv",
-            "Battery2-12A-1-21-2023_Battery2-12A-1-21-2023.csv",
-            "RainbowDash-12A-1-24-2023_RainbowDash-12A-1-24-2023.csv",
-            "Swiss-12A-1-24-2023_Swiss-12A-1-24-2023.csv",
-            "Fluttershy-12A-1-25-2023_Fluttershy-12A-1-25-2023.csv",
-            "BatteryC-12A-1-25-2023_BatteryC-12A-1-25-2023.csv",
-            "BatteryD-12A-1-25-2023_BatteryD-12A-1-25-2023.csv",
-            "CDia-12A-1-25-2023_CDia-12A-1-25-2023.csv",
-            "BatteryC-12A-1-28-2023_BatteryC-12A-1-28-2023.csv",
-            "CDia-12A-1-28-2023_CDia-12A-1-28-2023.csv",
-            "BatteryD-12A-1-30-2023_BatteryD-12A-1-30-2023.csv",
-            "BatteryC-12A-1-30-2023_BatteryC-12A-1-30-2023.csv",
-            "BatteryC-12A-1-31-2023_BatteryC-12A-1-31-2023.csv",
-            "Battery1-12A-1-31-2023_Battery1-12A-1-31-2023.csv",
-            "Battery1-12A-2-1-2023_Battery1-12A-2-1-2023.csv",
-            "BatteryC-12A-2-1-2023_BatteryC-12A-2-1-2023.csv",
-            "BatteryD-12A-2-2-2023_BatteryD-12A-2-2-2023.csv",
-            "BatteryC-12A-2-2-2023_BatteryC-12A-2-2-2023.csv",
-            "BatteryC-12A-2-4-2023_BatteryC-12A-2-4-2023.csv",
-            "BatteryD-12A-2-4-2023_BatteryD-12A-2-4-2023.csv",
-            "Battery1-12A-2-4-2023_Battery1-12A-2-4-2023.csv",
-            # "Applejack-12A-2-4-2023_Applejack-12A-2-4-2023.csv",
-            "BatteryD-12A-2-6-2023_BatteryD-12A-2-6-2023.csv",
-            "Battery1-12A-2-6-2023_Battery1-12A-2-6-2023.csv",
-            "Battery1-12A-2-7-2023_Battery1-12A-2-7-2023.csv",
-            "Mercury-12A-2-7-2023_Mercury-12A-2-7-2023.csv",
-            "Applejack-12A-2-22-2023_Applejack-12A-2-22-2023.csv",
-            "Jupiter-12A-3-14-2023.csv"
-            ]
+    fnames = os.listdir('data')
+    del_ls = ["Applejack-12A-2-4-2023_Applejack-12A-2-4-2023.csv"]
+
+    fnames = [i for i in fnames if i not in del_ls]
     # get data from the list of files.
     data = [get_data(s) for s in fnames]
 
@@ -73,7 +42,6 @@ def plot():
     axs[0].legend()
     plt.show()
     fig.savefig(f'batteryVI.pdf')
-
 
 
 if __name__ == "__main__":
