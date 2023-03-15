@@ -16,7 +16,7 @@ def get_data(fname):
 
 def plot():
     fnames = os.listdir('data')
-    del_ls = ["Applejack-12A-2-4-2023_Applejack-12A-2-4-2023.csv"]
+    del_ls = []
 
     fnames = [i for i in fnames if i not in del_ls]
     # get data from the list of files.
