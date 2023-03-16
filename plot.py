@@ -33,7 +33,7 @@ def plot():
             )
     
     labels = [s.split("-")[0] for s in fnames]
-    color = ['#5e3d3d', '#a8570f', '#face2f', '#2ffa9f', '#0f84fa', '#513e70', '#7e3380', '#992f6b', '#99ebf0', '#837896', '#f547cc', '#bf2cf5', '#b596a4', '#a3c2a8', '#c2bf67']
+    color = ['#6bfa43', '#fa9a25', '#face2f', '#25f6fa', '#0f84fa', '#be11f2', '#fc19b8', '#fc1921', '#99ebf0', '#837896', '#f547cc', '#bf2cf5', '#b596a4', '#a3c2a8', '#c2bf67', '#fa43776']
     for j in range(2):
         for i, fname in enumerate(fnames):
             print(i)
