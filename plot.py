@@ -31,19 +31,21 @@ def plot():
             figsize=(4, 5.5),
             height_ratios=[4, 1]
             )
+    
     labels = [s.split("-")[0] for s in fnames]
+    color = ['#5e3d3d', '#a8570f', '#face2f', '#2ffa9f', '#0f84fa', '#513e70', '#7e3380', '#992f6b', '#99ebf0', '#837896', '#f547cc', '#bf2cf5', '#b596a4', '#a3c2a8', '#c2bf67']
     for j in range(2):
         for i, fname in enumerate(fnames):
-            axs[j].plot(data[i][0,:], data[i][j+1,:], label=labels[i])
+            print(i)
+            axs[j].plot(data[i][0,:], data[i][j+1,:], color = color[i], label=labels[i])
 
     axs[0].grid()
     axs[0].set_ylabel("Voltage (V)")
     axs[1].set_ylabel("Current (A)")
     axs[1].set_xlabel("Time (s)")
-    axs[0].legend(fontsize=6)
+    axs[0].legend(fontsize=8)
     plt.show()
     fig.savefig('batteryVI.pdf')
-
 
 if __name__ == "__main__":
     plot()
