@@ -43,7 +43,7 @@ def plot():
     axs[0].set_ylabel("Voltage (V)")
     axs[1].set_ylabel("Current (A)")
     axs[1].set_xlabel("Time (s)")
-    axs[0].legend(fontsize=8)
+    axs[0].legend(fontsize = 8)
     plt.show()
     fig.savefig('batteryVI.pdf')
 
