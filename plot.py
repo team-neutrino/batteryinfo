@@ -15,10 +15,28 @@ def get_data(fname):
 
 
 def plot():
-    fnames = os.listdir('data')
-    del_ls = []
-
-    fnames = [i for i in fnames if i not in del_ls]
+    # list of file names.
+    fnames = [
+             "Applejack-12A-1-21-2023_Applejack-12A-1-21-2023.csv",
+             "Battery1-12A_1_23_2023_Battery1-12A_1_23_2023.csv",
+             "Battery2-12A-1-21-2023_Battery2-12A-1-21-2023.csv",
+             "BatteryC-12A-10-18-2023_Test_1.csv",
+             "BatteryD-12A-1-25-2023_BatteryD-12A-1-25-2023.csv",
+             "CDia-12A-1-25-2023_CDia-12A-1-25-2023.csv",
+             "Camembert-12A-1-21-2023_Camembert-12A-1-21-2023.csv",
+             "Earth-12A-3-18-2023_Earth.csv",
+             "Feta-12A-3-17-2023.csv",
+             "Fluttershy-12A-1-25-2023_Fluttershy-12A-1-25-2023.csv",
+             "Jupiter-12A-3-14-2023.csv",
+             "Mars-12A-3-21-2023_Mars.csv",
+             "Mercury-12A-2-7-2023_Mercury-12A-2-7-2023.csv",
+             "PinkePie-12A-3-39-2023.csv",
+             "RainbowDash-12A-1-24-2023_RainbowDash-12A-1-24-2023.csv",
+             "Saturn-12A-3-14-2023.csv",
+             "Swiss-12A-1-21-2023_Swiss-12A-1-21-2023.csv",
+             "Venus-12A-3-15-2023_Venus.csv",
+             ]
+  
     # get data from the list of files.
     data = [get_data(s) for s in fnames]
 
