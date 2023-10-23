@@ -17,9 +17,13 @@ def get_data(fname):
 def plot():
     # list of file names.
     fnames = [
+             #1
              "Applejack-12A-1-21-2023_Applejack-12A-1-21-2023.csv",
+             #2
              "Battery1-12A_1_23_2023_Battery1-12A_1_23_2023.csv",
+             #3
              "Battery2-12A-1-21-2023_Battery2-12A-1-21-2023.csv",
+             #4
              "BatteryC-12A-10-18-2023_Test_1.csv",
              "BatteryD-12A-1-25-2023_BatteryD-12A-1-25-2023.csv",
              "CDia-12A-1-25-2023_CDia-12A-1-25-2023.csv",
@@ -35,13 +39,14 @@ def plot():
              "Saturn-12A-3-14-2023.csv",
              "Swiss-12A-1-21-2023_Swiss-12A-1-21-2023.csv",
              "Venus-12A-3-15-2023_Venus.csv",
-             ]
+             ][:4]
   
     # get data from the list of files.
     data = [get_data(s) for s in fnames]
 
-    print(data[0][0, :])
-    print(data[0][1, :])
+    print(data[0].shape)
+    print(data[3].shape)
+
     # a 3x1 plot
     fig, axs = plt.subplots(2, 1,
             tight_layout=True,
@@ -51,7 +56,7 @@ def plot():
             )
     
     labels = [s.split("-")[0] for s in fnames]
-    color = ['#6bfa43', '#fa9a25', '#face2f', '#25f6fa', '#0f84fa', '#e9f542', '#42f5bf', '#fc1921', '#99ebf0', '#837896', '#f547cc', '#bf2cf5', '#b596a4', '#fc038c', '#e9f542', '#277a2d', '#1c5922', '#bcfc26']
+    color = ['#6bfa43', '#fa9a25', '#face2f', '#25f6fa', '#0f84fa', '#e9f542', '#42f5bf', '#fc1921', '#99ebf0', '#837896', '#f547cc', '#bf2cf5', '#b596a4', '#fc038c', '#e9f542', '#277a2d', '#1c5922', '#bcfc26', '#fcba03']
     for j in range(2):
         for i, fname in enumerate(fnames):
             print(i)
